@@ -3,10 +3,10 @@ services:
     - docker
 
 before_install:
-    - docker build -t robertaustin/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t wall05/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run robertaustin/react-test npm test -- --coverage
+    - docker run wall05/react-test npm test -- --coverage
 
 after_success:    
     
