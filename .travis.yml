@@ -9,16 +9,16 @@ script:
     - docker run robertaustin/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t robertaustin/multi-client ./client
-    - docker build -t robertaustin/multi-nginx ./nginx
-    - docker build -t robertaustin/multi-server ./server
-    - docker build -t robertaustin/multi-worker ./worker
+    - docker build -t wall05/multi-client ./client
+    - docker build -t wall05/multi-nginx ./nginx
+    - docker build -t wall05/multi-server ./server
+    - docker build -t wall05/multi-worker ./worker
     
     # Login to docker cli
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # push images to docker
-    - docker push robertaustin/multi-client
-    - docker push robertaustin/multi-nginx
-    - docker push robertaustin/multi-server
-    - docker push robertaustin/multi-worker
+    - docker push wall05/multi-client
+    - docker push wall05/multi-nginx
+    - docker push wall05/multi-server
+    - docker push wall05/multi-worker
